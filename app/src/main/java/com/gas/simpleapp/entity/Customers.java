@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "customers")
 public class Customers {
     @PrimaryKey(autoGenerate = true)
-    private String id;
+    private Integer id;
 
     private String first_name;
 
@@ -30,11 +30,11 @@ public class Customers {
         this.email = email;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 

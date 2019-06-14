@@ -1,15 +1,16 @@
 package com.gas.simpleapp.viewmodals;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 import com.gas.simpleapp.entity.Customers;
 import com.gas.simpleapp.repositories.CustomerRepository;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
 
 public class CustomerViewModel extends AndroidViewModel {
 
@@ -20,7 +21,6 @@ public class CustomerViewModel extends AndroidViewModel {
         super(application);
         repository = new CustomerRepository(application);
         all = repository.getAll();
-
     }
 
     public void insert(Customers customer){

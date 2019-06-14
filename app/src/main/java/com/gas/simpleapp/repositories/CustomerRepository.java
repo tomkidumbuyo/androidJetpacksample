@@ -1,16 +1,15 @@
 package com.gas.simpleapp.repositories;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
+
+import androidx.lifecycle.LiveData;
 
 import com.gas.simpleapp.dao.CustomerDao;
 import com.gas.simpleapp.db.CustomerDatabase;
 import com.gas.simpleapp.entity.Customers;
 
 import java.util.List;
-
-import androidx.room.Update;
 
 public class CustomerRepository {
 
@@ -40,7 +39,7 @@ public class CustomerRepository {
         return all;
     }
 
-    private static class InsertCustomerAsynkTask extends AsyncTask<Customers,Void,Void>{
+    private static class InsertCustomerAsynkTask extends AsyncTask<Customers, Void, Void> {
         private CustomerDao customerDao;
 
         private InsertCustomerAsynkTask(CustomerDao customerDao){
@@ -54,7 +53,7 @@ public class CustomerRepository {
         }
     }
 
-    private static class DeleteCustomerAsynkTask extends AsyncTask<Customers,Void,Void>{
+    private static class DeleteCustomerAsynkTask extends AsyncTask<Customers, Void, Void> {
         private CustomerDao customerDao;
 
         private DeleteCustomerAsynkTask(CustomerDao customerDao){
@@ -68,7 +67,7 @@ public class CustomerRepository {
         }
     }
 
-    private static class UpdateCustomerAsynkTask extends AsyncTask<Customers,Void,Void> {
+    private static class UpdateCustomerAsynkTask extends AsyncTask<Customers, Void, Void> {
         private CustomerDao customerDao;
 
         private UpdateCustomerAsynkTask(CustomerDao customerDao) {
@@ -82,7 +81,7 @@ public class CustomerRepository {
         }
     }
 
-    private static class DeleteAllCustomerAsynkTask extends AsyncTask<Customers,Void,Void>{
+    private static class DeleteAllCustomerAsynkTask extends AsyncTask<Customers, Void, Void> {
         private CustomerDao customerDao;
 
         private DeleteAllCustomerAsynkTask(CustomerDao customerDao){
