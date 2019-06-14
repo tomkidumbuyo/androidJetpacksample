@@ -20,7 +20,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
     @NonNull
     @Override
     public CustomerHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.customer_item,parent,false)
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.customer_item,parent,false);
         return new CustomerHolder(itemView);
     }
 
