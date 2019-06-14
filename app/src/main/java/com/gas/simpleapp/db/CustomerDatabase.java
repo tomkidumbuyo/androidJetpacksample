@@ -1,13 +1,16 @@
 package com.gas.simpleapp.db;
 
 import android.content.Context;
+import android.os.AsyncTask;
 
 import com.gas.simpleapp.dao.CustomerDao;
 import com.gas.simpleapp.entity.Customers;
 
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 @Database(entities = {Customers.class},version = 1)
 public abstract class CustomerDatabase extends RoomDatabase {
@@ -23,5 +26,25 @@ public abstract class CustomerDatabase extends RoomDatabase {
                     .build();
         }
         return instance;
+    }
+
+    private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback(){
+        @Override
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+            super.onCreate(db);
+        }
+    };
+
+    private static class PopulateDbAsyncTask extends AsyncTask<Void,Void,Void>{
+        private  CustomerDao customerDao;
+
+        private PopulateDbAsyncTask(CustomerDatabase db){
+            customerDao = db.customerDao();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
     }
 }
